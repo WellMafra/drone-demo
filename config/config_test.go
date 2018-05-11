@@ -33,5 +33,5 @@ func after() {
 func TestReadEnv(t *testing.T) {
 	cfg := MustGet()
 	assert.Equal(t, envPort, cfg.Port)
-	assert.Equal(t, envAllowedOrigins, strings.Join(cfg.AllowedOrigins, ","))
+	assert.Equal(t, envAllowedOrigins, strings.Join(cfg.AllowedOrigins, ",a"))
 }
