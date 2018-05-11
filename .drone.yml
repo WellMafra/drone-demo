@@ -4,8 +4,8 @@ workspace:
 
 pipeline:
   build:
-    image: golang:1.9
+    image: instrumentisto/dep:0.4.1-alpine
     commands:
-      - go get ./...
+      - dep ensure
       - go test ./...
       - go build
