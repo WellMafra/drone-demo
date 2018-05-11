@@ -9,3 +9,14 @@ pipeline:
       - dep ensure
       - go test ./...
       - go build
+
+  publish:
+    image: plugins/docker
+    repo: WellMafra/drone-demo
+    tags: [ 1, 1.1, latest ]
+    registry: index.docker.io
+
+#  notify:
+#    image: plugins/slack
+#    channel: developers
+#    username: drone
