@@ -1,0 +1,19 @@
+pipeline:
+  build:
+    image: golang
+    commands:
+      - go get
+      - go build
+
+  test:
+    image: golang
+    commands:
+      - go get
+      - go test ./...
+
+  full:
+    image: golang
+    commands:
+      - go get
+      - go build
+      - go test ./...
