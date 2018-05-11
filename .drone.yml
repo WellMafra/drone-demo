@@ -3,13 +3,6 @@ workspace:
   path: src/github.com/WellMafra/drone-demo
 
 pipeline:
-  docker:
-      image: plugins/docker
-      username: ${DOCKER_USER}
-      password: ${DOCKER_PASS}
-      repo: wellmafra/drone-demo
-      auto_tag: true
-
   build:
     image: instrumentisto/dep:0.4.1-alpine
     commands:
@@ -17,11 +10,11 @@ pipeline:
       - go test ./...
       - go build
 
-  publish:
-    image: plugins/docker
-    repo: wellmafra/drone-demo
-    tags: [ 1, 1.1, latest ]
-    registry: index.docker.io
+#  publish:
+#    image: plugins/docker
+#    repo: wellmafra/drone-demo
+#    tags: [ 1, 1.1, latest ]
+#    registry: index.docker.io
 
 #  notify:
 #    image: plugins/slack
