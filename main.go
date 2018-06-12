@@ -13,6 +13,7 @@ import (
 
 func status(w http.ResponseWriter, r *http.Request, ps httprouter.Params) {
 	w.Write([]byte("OK"))
+
 }
 
 func main() {
