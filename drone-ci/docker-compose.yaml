@@ -6,9 +6,10 @@ services:
 
     ports:
       - 8000:8000
-      - 9000
+      - 9000:9000
     volumes:
       - /var/lib/drone:/var/lib/drone/
+      # adicionar /private no começo do path caso for MacOSX
     restart: always
     environment:
       - DRONE_OPEN=true
@@ -31,6 +32,7 @@ services:
       - drone-server
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock # Comunica com docker para criar containers
+      # adicionar /private no começo do path caso for MacOSX
     environment:
       - DRONE_SERVER=drone-server:9000
       - DRONE_SECRET=${DRONE_SECRET}
